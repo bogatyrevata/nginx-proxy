@@ -1,0 +1,22 @@
+services:
+  nginx-proxy:
+    build: .
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
+    volumes:
+      # unix-сокеты uwsgi для класса труда
+      - /var/lib/uwsgi:/var/lib/uwsgi
+      # статика и медиа класса труда
+      - /var/www/klasstrueda.ru:/var/www/klasstrueda.ru:ro
+      # SSL сертификаты
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    networks:
+      - books-network
+
+networks:
+  books-network:
+    external: true
+    name: books-network
