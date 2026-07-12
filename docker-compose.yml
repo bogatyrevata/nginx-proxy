@@ -13,6 +13,8 @@ services:
       - /var/lib/uwsgi:/var/lib/uwsgi
       # статика и медиа класса труда
       - /var/www/klasstrueda.ru:/var/www/klasstrueda.ru:ro
+      # статика и медиа bogatyrevata.com
+      - /var/www/bogatyrevata.com/public:/var/www/bogatyrevata.com/public:ro 
       # SSL сертификаты
       - /etc/letsencrypt:/etc/letsencrypt:ro
     networks:
