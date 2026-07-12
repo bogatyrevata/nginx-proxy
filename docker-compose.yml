@@ -14,7 +14,9 @@ services:
       # статика и медиа класса труда
       - /var/www/klasstrueda.ru:/var/www/klasstrueda.ru:ro
       # статика и медиа bogatyrevata.com
-      - /var/www/bogatyrevata.com/public:/var/www/bogatyrevata.com/public:ro 
+      - /var/www/bogatyrevata.com/public:/var/www/bogatyrevata.com/public:ro
+      # ssl сертификаты
+      - /var/www/certbot:/var/www/certbot:ro 
       # SSL сертификаты
       - /etc/letsencrypt:/etc/letsencrypt:ro
     networks:
